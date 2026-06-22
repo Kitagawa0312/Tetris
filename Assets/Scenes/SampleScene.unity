@@ -119,6 +119,58 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &374812575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 374812577}
+  - component: {fileID: 374812576}
+  m_Layer: 0
+  m_Name: TetrominoDatabase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &374812576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374812575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f682d4948135ca4bacdfd6548c8617b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrominoDatabase
+  _tetrominoDatas:
+  - {fileID: 11400000, guid: ff6b4cd7ebab93346881d22b7f4704f8, type: 2}
+  - {fileID: 11400000, guid: ceaa57a2906a38f49bf48b3a7d0c456d, type: 2}
+  - {fileID: 11400000, guid: ae5b129e40038cf428eb044e232a27b8, type: 2}
+  - {fileID: 11400000, guid: 435e57605e34a3c4bb2e54cc2390167d, type: 2}
+  - {fileID: 11400000, guid: 9b6501880de0f8d4c9e9a484ff263a61, type: 2}
+  - {fileID: 11400000, guid: 3c42bcec36d5710459959cd192f89c16, type: 2}
+  - {fileID: 11400000, guid: 1c76c7cd0f1cee043aa94851ce5acd83, type: 2}
+--- !u!4 &374812577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374812575}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.58818, y: -1.09834, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &511700889
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +182,7 @@ GameObject:
   - component: {fileID: 511700891}
   - component: {fileID: 511700890}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,6 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   boardView: {fileID: 1334796598}
+  tetrominoView: {fileID: 1848621032}
+  database: {fileID: 374812576}
 --- !u!4 &511700891
 Transform:
   m_ObjectHideFlags: 0
@@ -424,7 +478,53 @@ Transform:
   m_GameObject: {fileID: 1334796597}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalPosition: {x: 5.5, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1848621031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1848621033}
+  - component: {fileID: 1848621032}
+  m_Layer: 0
+  m_Name: TetrominoView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1848621032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848621031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1754ddf6988a6344b868b2183619214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrominoView
+  _blockPrefab: {fileID: 7146880171810604716, guid: 5af4d05c2932fb94ca128d7993f23c56, type: 3}
+  _boardView: {fileID: 1334796598}
+--- !u!4 &1848621033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848621031}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.58818, y: -1.09834, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -438,3 +538,5 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1334796599}
   - {fileID: 511700891}
+  - {fileID: 1848621033}
+  - {fileID: 374812577}
