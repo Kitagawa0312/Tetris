@@ -1,12 +1,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ミノのデータベース
+/// </summary>
 public class TetrominoDatabase : MonoBehaviour
 {
+    #region 変数
+
     [SerializeField] private TetrominoData[] _tetrominoDatas = default;
 
     Dictionary<MinoType,TetrominoData> _minoDictionary = new Dictionary<MinoType, TetrominoData>();
 
+    #endregion
+
+    #region メソッド
+    
+    /// <summary>
+    /// 初期設定
+    /// </summary>
     private void Awake()
     {
         _minoDictionary.Clear();
@@ -19,12 +31,15 @@ public class TetrominoDatabase : MonoBehaviour
                 continue;
             }
 
-            _minoDictionary.Add(
-                _tetrominoDatas[i].Type,
-                _tetrominoDatas[i]);
+            _minoDictionary.Add(_tetrominoDatas[i].Type,_tetrominoDatas[i]);
         }
     }
 
+    /// <summary>
+    /// 指定したミノの取得
+    /// </summary>
+    /// <param name="type">ミノの形</param>
+    /// <returns>ミノのデータ</returns>
     public TetrominoData Get(MinoType type)
     {
         if (_minoDictionary.TryGetValue(type, out TetrominoData data))
@@ -35,4 +50,6 @@ public class TetrominoDatabase : MonoBehaviour
         Debug.LogError($"{type} の TetrominoData が登録されていません");
         return null;
     }
+
+    #endregion
 }

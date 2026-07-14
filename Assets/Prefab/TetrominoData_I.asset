@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d64ab003cc327eb488ac26267ca0167e, type: 3}
   m_Name: TetrominoData_I
   m_EditorClassIdentifier: Assembly-CSharp::TetrominoData
-  _minoSprite: {fileID: 5016643371771137518, guid: 2a0999df6a2fc114f870161f14b69dd6, type: 3}
+  MinoSprite: {fileID: 5016643371771137518, guid: 2a0999df6a2fc114f870161f14b69dd6, type: 3}
   Rotations:
   - Cells:
     - {x: -1, y: 0}

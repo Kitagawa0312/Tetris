@@ -1,6 +1,10 @@
 using UnityEngine;
 
+/// <summary>
+/// ミノのデータ
+/// </summary>
 
+// ミノの形
 public enum MinoType
 {
     I,
@@ -15,7 +19,7 @@ public enum MinoType
 [CreateAssetMenu(fileName = "TetrominoData",menuName = "Tetris/Tetromino Data")]
 public class TetrominoData : ScriptableObject
 {
-    public Sprite _minoSprite = default;
+    public Sprite MinoSprite = default;
 
     public RotationData[] Rotations;
 
